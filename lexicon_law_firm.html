@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lexicon Law Firm | Solusi Hukum Terpercaya</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        playfair: ['"Playfair Display"', 'serif'],
+                        inter: ['"Inter"', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: '#0B1F3A',
+                        gold: '#D4AF37',
+                        goldlight: '#F3E5AB'
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for an elegant touch */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b5952f; 
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="font-inter text-gray-800 antialiased bg-[#F9FAFB] overflow-x-hidden relative">
+
+    <!-- Floating WhatsApp Button (Main Contact) -->
+    <a href="#consultation" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-[0_4px_20px_rgba(37,211,102,0.6)] hover:scale-110 animate-bounce transition-transform duration-300">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- 1. Sticky Navbar -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-40 transition-all duration-500 py-4 bg-transparent text-white border-b border-white/10 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+            
+            <!-- Logo Section -->
+            <a href="#" class="flex items-center gap-3 group">
+                <!-- Menggunakan gambar logo yang diunggah -->
+                <img src="./Logo Lawfirm.png" alt="Lexicon Logo" class="h-10 w-10 md:h-12 md:w-12 rounded-full object-cover border-2 border-gold/50 group-hover:border-gold transition-colors duration-300 shadow-[0_0_10px_rgba(212,175,55,0.3)]">
+                <div class="font-playfair text-2xl md:text-3xl font-bold text-gold tracking-wide">
+                    Lexicon<span class="text-white text-lg md:text-xl font-normal ml-1">Law Firm</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center space-x-8 text-sm font-medium">
+                <a href="#home" class="relative text-white hover:text-gold transition-colors duration-300 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-gold hover:after:w-full after:transition-all after:duration-300">Home</a>
+                <a href="#about" class="relative text-white hover:text-gold transition-colors duration-300 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-gold hover:after:w-full after:transition-all after:duration-300">About Us</a>
+                <a href="#practice-areas" class="relative text-white hover:text-gold transition-colors duration-300 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-gold hover:after:w-full after:transition-all after:duration-300">Practice Areas</a>
+                <a href="#lawyers" class="relative text-white hover:text-gold transition-colors duration-300 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-gold hover:after:w-full after:transition-all after:duration-300">Our Lawyers</a>
+                <a href="#consultation" class="bg-gold text-navy px-6 py-2.5 rounded-xl font-semibold hover:bg-white hover:text-navy hover:-translate-y-1 transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.4)] flex items-center gap-2">
+                    Konsultasi <i class="fa-solid fa-arrow-right text-sm"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" class="lg:hidden text-white text-2xl focus:outline-none hover:text-gold transition-colors">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-navy/95 backdrop-blur-xl absolute top-full left-0 w-full flex flex-col space-y-4 px-6 py-6 shadow-2xl border-t border-white/10">
+            <a href="#home" class="text-white hover:text-gold transition-colors font-medium">Home</a>
+            <a href="#about" class="text-white hover:text-gold transition-colors font-medium">About Us</a>
+            <a href="#practice-areas" class="text-white hover:text-gold transition-colors font-medium">Practice Areas</a>
+            <a href="#lawyers" class="text-white hover:text-gold transition-colors font-medium">Our Lawyers</a>
+            <a href="#consultation" class="bg-gold text-navy px-5 py-3 rounded-xl font-semibold text-center mt-4">Mulai Konsultasi</a>
+        </div>
+    </nav>
+
+    <!-- 2. Hero Section -->
+    <!-- Hero Section yang diperbaiki -->
+<header id="home" class="relative w-full h-screen overflow-hidden flex items-center">
+    
+    <!-- Background Gambar -->
+    <img src="Background Website.png" alt="Background Law Firm" class="absolute inset-0 w-full h-full object-cover z-0">
+    
+    <!-- Overlay agar teks terbaca -->
+    <div class="absolute inset-0 bg-navy/40 z-0"></div>
+    
+    <!-- Kontainer Konten (Posisi tetap di tengah) -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
+        <div class="w-full md:w-3/4 lg:w-2/3" data-aos="fade-up" data-aos-duration="1200">
+            
+            <!-- Label -->
+            <div class="flex items-center gap-3 mb-6">
+                <div class="h-[1px] w-12 bg-gold"></div>
+                <span class="inline-block py-1 px-4 rounded-full bg-gold/10 border border-gold/30 text-gold text-xs font-playfair tracking-widest uppercase backdrop-blur-md">Firma Hukum Terkemuka</span>
+            </div>
+            
+            <!-- Judul dan Deskripsi -->
+            <h1 class="font-bold text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+                Solusi Hukum yang <span class="text-gold">Pasti</span>, Inovatif dan Terpercaya
+            </h1>
+            <p class="text-gray-200 text-lg mb-10 max-w-xl leading-relaxed">
+                Lexicon Law Firm hadir sebagai mitra strategis yang memberikan layanan hukum komprehensif bagi kebutuhan bisnis dan personal Anda.
+            </p>
+
+            <!-- Tombol (Dijamin tidak jatuh) -->
+            <div class="flex flex-wrap gap-4">
+                <a href="#consultation" class="bg-gold text-navy px-8 py-4 rounded-full font-bold hover:bg-white transition-all">
+                    Hubungi Kami Sekarang
+                </a>
+                <a href="#about" class="border-2 border-white/50 text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-navy transition-all">
+                    Pelajari Layanan
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</header>
+
+    <!-- 3. About Us & EXCELLENT Values Section -->
+    <section id="about" class="py-24 md:py-32 bg-white relative overflow-hidden">
+        <!-- Dekorasi artistik latar belakang -->
+        <div class="absolute top-0 right-0 w-72 h-72 bg-gold/10 rounded-full blur-3xl -z-10 animate-blob"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <!-- Kiri: Corporate Image/Video -->
+                <div class="relative rounded-[2rem] overflow-hidden shadow-2xl h-[500px] lg:h-[650px] group" data-aos="fade-right">
+                    <div class="absolute inset-0 bg-navy/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                    <img src="logo2.jpeg" alt="Law Firm Office" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    
+                    <!-- Floating Badge Element -->
+                    <div class="absolute bottom-14 left-2 z-20 bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-xl border-l-4 border-gold animate-float hidden">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-navy text-gold rounded-full flex justify-center items-center text-2xl"><i class="fa-solid fa-scale-balanced"></i></div>
+                            <div>
+                                <h4 class="font-bold text-navy font-playfair text-xl">Lexion Law Firm</h4>
+                                <p class="text-sm text-gray-500 font-medium">Melindungi Kepentingan Klien</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kanan: Teks Visi, Misi & EXCEL -->
+                <div data-aos="fade-left" data-aos-delay="200">
+                    <h2 class="font-playfair text-4xl md:text-5xl font-bold text-navy mb-4">Tentang Lexicon</h2>
+                    <div class="w-24 h-1.5 bg-gold rounded-full mb-8"></div>
+                    
+                    <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                        Menjadi firma hukum terdepan di Indonesia yang memberikan solusi hukum paling strategis, inovatif, dan berintegritas tinggi dalam melindungi setiap kepentingan klien kami di era modern.
+                    </p>
+
+                    <!-- Nilai E.X.C.E.L -->
+                    <div class="mt-10">
+                        <h3 class="font-playfair text-2xl font-bold text-navy mb-6 flex items-center gap-3">
+                            <i class="fa-solid fa-gem text-gold"></i> Nilai Inti Kami: <span class="text-gold tracking-widest bg-gold/10 px-3 py-1 rounded-lg">EXCEL</span>
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <!-- List Item -->
+                            <div class="flex items-center p-5 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-lg hover:border-gold/50 hover:-translate-y-1 transition-all duration-300 group">
+                                <div class="w-12 h-12 rounded-xl bg-navy/5 flex items-center justify-center mr-5 group-hover:bg-gold group-hover:text-white transition-colors duration-300">
+                                    <span class="text-gold group-hover:text-white font-bold text-2xl font-playfair">E</span>
+                                </div>
+                                <p class="text-navy font-medium text-lg"><span class="font-bold">xpertise</span> <span class="text-gray-500 font-normal ml-1 text-sm md:text-base">(Keahlian Mendalam)</span></p>
+                            </div>
+
+                            <div class="flex items-center p-5 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-lg hover:border-gold/50 hover:-translate-y-1 transition-all duration-300 group">
+                                <div class="w-12 h-12 rounded-xl bg-navy/5 flex items-center justify-center mr-5 group-hover:bg-gold group-hover:text-white transition-colors duration-300">
+                                    <span class="text-gold group-hover:text-white font-bold text-2xl font-playfair">X</span>
+                                </div>
+                                <p class="text-navy font-medium text-lg"><span class="font-bold">-Factor</span> <span class="text-gray-500 font-normal ml-1 text-sm md:text-base">(Keunggulan Kompetitif)</span></p>
+                            </div>
+
+                            <div class="flex items-center p-5 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-lg hover:border-gold/50 hover:-translate-y-1 transition-all duration-300 group">
+                                <div class="w-12 h-12 rounded-xl bg-navy/5 flex items-center justify-center mr-5 group-hover:bg-gold group-hover:text-white transition-colors duration-300">
+                                    <span class="text-gold group-hover:text-white font-bold text-2xl font-playfair">C</span>
+                                </div>
+                                <p class="text-navy font-medium text-lg"><span class="font-bold">ommitment</span> <span class="text-gray-500 font-normal ml-1 text-sm md:text-base">(Komitmen Penuh)</span></p>
+                            </div>
+
+                            <div class="flex items-center p-5 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-lg hover:border-gold/50 hover:-translate-y-1 transition-all duration-300 group">
+                                <div class="w-12 h-12 rounded-xl bg-navy/5 flex items-center justify-center mr-5 group-hover:bg-gold group-hover:text-white transition-colors duration-300">
+                                    <span class="text-gold group-hover:text-white font-bold text-2xl font-playfair">E</span>
+                                </div>
+                                <p class="text-navy font-medium text-lg"><span class="font-bold">fficiency</span> <span class="text-gray-500 font-normal ml-1 text-sm md:text-base">(Efisiensi Waktu & Biaya)</span></p>
+                            </div>
+
+                            <div class="flex items-center p-5 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-lg hover:border-gold/50 hover:-translate-y-1 transition-all duration-300 group">
+                                <div class="w-12 h-12 rounded-xl bg-navy/5 flex items-center justify-center mr-5 group-hover:bg-gold group-hover:text-white transition-colors duration-300">
+                                    <span class="text-gold group-hover:text-white font-bold text-2xl font-playfair">L</span>
+                                </div>
+                                <p class="text-navy font-medium text-lg"><span class="font-bold">oyalty</span> <span class="text-gray-500 font-normal ml-1 text-sm md:text-base">(Kesetiaan & Kepercayaan)</span></p>
+                            </div>      
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Practice Areas -->
+    <section id="practice-areas" class="relative py-24 md:py-32 bg-navy text-white overflow-hidden">
+        <!-- Dekorasi Background Mewah -->
+        <div class="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gold opacity-10 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500 opacity-10 rounded-full blur-[100px]"></div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <span class="text-gold font-semibold tracking-widest uppercase text-sm mb-2 block">Layanan Profesional</span>
+                <h2 class="font-playfair text-4xl md:text-5xl font-bold mb-6">Area Praktik Hukum</h2>
+                <div class="w-24 h-1 bg-gold mx-auto rounded-full mb-6"></div>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">Mencakup berbagai aspek hukum dengan spesialisasi yang dirancang khusus untuk melindungi dan mengembangkan bisnis maupun individu.</p>
+            </div>
+
+            <!-- Grid 7 Layanan -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="glass-card rounded-3xl p-8 transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_20px_40px_rgba(212,175,55,0.15)] hover:border-gold group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-navy/80 rounded-2xl flex items-center justify-center mb-8 border border-white/10 transition-transform duration-500 group-hover:scale-110 group-hover:bg-gold">
+                        <i class="fa-solid fa-users text-gold group-hover:text-navy text-2xl transition-colors"></i>
+                    </div>
+                    <h3 class="font-playfair text-2xl font-bold text-navy mb-4">Konsultasi dan Pendampingan</h3>
+                    <p class="text-gray-600 leading-relaxed">Pemberian nasihat hukum komprehensif dan pendampingan profesional di setiap langkah hukum Anda.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-card rounded-3xl p-8 transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_20px_40px_rgba(212,175,55,0.15)] hover:border-gold group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-navy/80 rounded-2xl flex items-center justify-center mb-8 border border-white/10 transition-transform duration-500 group-hover:scale-110 group-hover:bg-gold">
+                        <i class="fa-solid fa-file-signature text-gold group-hover:text-navy text-2xl transition-colors"></i>
+                    </div>
+                    <h3 class="font-playfair text-2xl font-bold text-navy mb-4">Review Kontrak</h3>
+                    <p class="text-gray-600 leading-relaxed">Merancang, meninjau, dan menegosiasikan draf perjanjian demi keamanan penuh bisnis Anda.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-card rounded-3xl p-8 transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_20px_40px_rgba(212,175,55,0.15)] hover:border-gold group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-navy/80 rounded-2xl flex items-center justify-center mb-8 border border-white/10 transition-transform duration-500 group-hover:scale-110 group-hover:bg-gold">
+                        <i class="fa-solid fa-building text-gold group-hover:text-navy text-2xl transition-colors"></i>
+                    </div>
+                    <h3 class="font-playfair text-2xl font-bold text-navy mb-4">Legalitas Korporasi</h3>
+                    <p class="text-gray-600 leading-relaxed">Pengurusan izin usaha, pendirian badan hukum, hingga manajemen resolusi konflik internal perusahaan.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="glass-card rounded-3xl p-8 transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_20px_40px_rgba(212,175,55,0.15)] hover:border-gold group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-navy/80 rounded-2xl flex items-center justify-center mb-8 border border-white/10 transition-transform duration-500 group-hover:scale-110 group-hover:bg-gold">
+                        <i class="fa-solid fa-chart-line text-gold group-hover:text-navy text-2xl transition-colors"></i>
+                    </div>
+                    <h3 class="font-playfair text-2xl font-bold text-navy mb-4">Investasi dan Transaksi</h3>
+                    <p class="text-gray-600 leading-relaxed">Pengawalan ketat regulasi investasi domestik maupun asing untuk meminimalisasi risiko.</p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="glass-card rounded-3xl p-8 transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_20px_40px_rgba(212,175,55,0.15)] hover:border-gold group" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-16 h-16 bg-navy/80 rounded-2xl flex items-center justify-center mb-8 border border-white/10 transition-transform duration-500 group-hover:scale-110 group-hover:bg-gold">
+                        <i class="fa-solid fa-handshake-angle text-gold group-hover:text-navy text-2xl transition-colors"></i>
+                    </div>
+                    <h3 class="font-playfair text-2xl font-bold text-navy mb-4">Merger dan Akuisisi (MnA)</h3>
+                    <p class="text-gray-600 leading-relaxed">Bantuan legal due diligence yang tajam, negosiasi, dan restrukturisasi aset terstruktur.</p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="glass-card rounded-3xl p-8 transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_20px_40px_rgba(212,175,55,0.15)] hover:border-gold group" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-16 h-16 bg-navy/80 rounded-2xl flex items-center justify-center mb-8 border border-white/10 transition-transform duration-500 group-hover:scale-110 group-hover:bg-gold">
+                        <i class="fa-solid fa-scale-unbalanced text-gold group-hover:text-navy text-2xl transition-colors"></i>
+                    </div>
+                    <h3 class="font-playfair text-2xl font-bold text-navy mb-4">Kepailitan dan PKPU</h3>
+                    <p class="text-gray-600 leading-relaxed">Penanganan tuntas proses Penundaan Kewajiban Pembayaran Utang dan restrukturisasi finansial.</p>
+                </div>
+
+                <!-- Card 7 (Centered at bottom) -->
+                <div class="glass-card rounded-3xl p-8 transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_20px_40px_rgba(212,175,55,0.15)] hover:border-gold group lg:col-start-2" data-aos="fade-up" data-aos-delay="700">
+                    <div class="w-16 h-16 bg-navy/80 rounded-2xl flex items-center justify-center mb-8 border border-white/10 transition-transform duration-500 group-hover:scale-110 group-hover:bg-gold">
+                        <i class="fa-solid fa-gavel text-gold group-hover:text-navy text-2xl transition-colors"></i>
+                    </div>
+                    <h3 class="font-playfair text-2xl font-bold text-navy mb-4">Penanganan Sengketa</h3>
+                    <p class="text-gray-600 leading-relaxed">Representasi kuat di pengadilan (litigasi) maupun negosiasi damai di luar pengadilan (mediasi dan arbitrase).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Our Lawyers (8 Advokat Terhubung IG & WA) -->
+    <section id="lawyers" class="py-24 md:py-32 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <span class="text-gold font-semibold tracking-widest uppercase text-sm mb-2 block">Tim Profesional</span>
+                <h2 class="font-playfair text-4xl md:text-5xl font-bold text-navy mb-6">Advokat Lexicon</h2>
+                <div class="w-24 h-1 bg-gold mx-auto rounded-full mb-6"></div>
+                <p class="text-gray-500 max-w-2xl mx-auto text-lg">Para pakar hukum tangguh yang mendedikasikan waktu, pikiran, dan tenaga mereka untuk memastikan kemenangan dan keamanan hukum Anda.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Advokat 1: Ihsan Ahmad Fauzan, S.H. -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl group border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-72 overflow-hidden relative">
+                        <img src="Ihsan.jpeg" alt="Ihsan Ahmad Fauzan, S.H." class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <!-- Hover Overlay with Socials -->
+                        <div class="absolute inset-0 bg-navy/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center space-y-4">
+                            <span class="text-white text-sm font-semibold tracking-wider mb-2">Hubungi Langsung</span>
+                            <div class="flex space-x-4">
+                                <a href="https://instagram.com/sannsshelby_" target="_blank" class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-gradient-to-tr hover:from-yellow-400 hover:to-purple-600 transition-all hover:scale-110" title="Instagram @sannsshelby_"><i class="fa-brands fa-instagram text-xl"></i></a>
+                                <a href="https://wa.me/6282114290904" target="_blank" class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-[#25D366] transition-all hover:scale-110" title="WhatsApp"><i class="fa-brands fa-whatsapp text-xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center border-b-4 border-transparent group-hover:border-gold transition-colors">
+                        <h3 class="font-bold text-navy text-lg mb-1">Ihsan Ahmad Fauzan, S.H.</h3>
+                        <p class="text-gold text-sm font-bold uppercase tracking-wide">Managing Partner</p>
+                    </div>
+                </div>
+
+                <!-- Advokat 2: Raficka Ayu Nuraulia, S.H. -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl group border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-72 overflow-hidden relative">
+                        <img src="Raficka .JPG.jpeg" alt="Raficka Ayu Nuraulia, S.H." class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-navy/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center space-y-4">
+                            <span class="text-white text-sm font-semibold tracking-wider mb-2">Hubungi Langsung</span>
+                            <div class="flex space-x-4">
+                                <a href="https://instagram.com/rafickanura" target="_blank" class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-gradient-to-tr hover:from-yellow-400 hover:to-purple-600 transition-all hover:scale-110" title="Instagram @rafickanura"><i class="fa-brands fa-instagram text-xl"></i></a>
+                                <a href="https://wa.me/6285163722008" target="_blank" class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-[#25D366] transition-all hover:scale-110" title="WhatsApp"><i class="fa-brands fa-whatsapp text-xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center border-b-4 border-transparent group-hover:border-gold transition-colors">
+                        <h3 class="font-bold text-navy text-lg mb-1">Raficka Ayu Nuraulia, S.H.</h3>
+                        <p class="text-gold text-sm font-bold uppercase tracking-wide">Senior Associate</p>
+                    </div>
+                </div>
+
+                <!-- Advokat 3: Ardiya Nessa, S.H. -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl group border border-gray-100" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-72 overflow-hidden relative">
+                        <img src="Diya.jpeg" alt="Ardiya Nessa, S.H." class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-navy/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center space-y-4">
+                            <span class="text-white text-sm font-semibold tracking-wider mb-2">Hubungi Langsung</span>
+                            <div class="flex space-x-4">
+                                <a href="https://instagram.com/neesicee" target="_blank" class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-gradient-to-tr hover:from-yellow-400 hover:to-purple-600 transition-all hover:scale-110" title="Instagram @neesicee"><i class="fa-brands fa-instagram text-xl"></i></a>
+                                <a href="https://wa.me/6287815311473" target="_blank" class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-[#25D366] transition-all hover:scale-110" title="WhatsApp"><i class="fa-brands fa-whatsapp text-xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center border-b-4 border-transparent group-hover:border-gold transition-colors">
+                        <h3 class="font-bold text-navy text-lg mb-1">Ardiya Nessa, S.H.</h3>
+                        <p class="text-gold text-sm font-bold uppercase tracking-wide">Senior Associate</p>
+                    </div>
+                </div>
+
+                <!-- Advokat 4: Dawamussakhiy, S.H. -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl group border border-gray-100" data-aos="fade-up" data-aos-delay="400">
+                    <div class="h-72 overflow-hidden relative">
+                        <img src="Sahi.jpeg" alt="Dawamussakhiy, S.H." class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-navy/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center space-y-4">
+                            <span class="text-white text-sm font-semibold tracking-wider mb-2">Hubungi Langsung</span>
+                            <div class="flex space-x-4">
+                                <a href="https://instagram.com/sahi_aja" target="_blank" class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-gradient-to-tr hover:from-yellow-400 hover:to-purple-600 transition-all hover:scale-110" title="Instagram @sahi_aja"><i class="fa-brands fa-instagram text-xl"></i></a>
+                                <a href="https://wa.me/6285772081730" target="_blank" class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-[#25D366] transition-all hover:scale-110" title="WhatsApp"><i class="fa-brands fa-whatsapp text-xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center border-b-4 border-transparent group-hover:border-gold transition-colors">
+                        <h3 class="font-bold text-navy text-lg mb-1">Dawamussakhiy, S.H.</h3>
+                        <p class="text-gold text-sm font-bold uppercase tracking-wide">Corporate Lawyer</p>
+                    </div>
+                </div>
+
+                <!-- Advokat 5: Dakka Airlangga, S.H. -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl group border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-72 overflow-hidden relative">
+                        <img src="Dakka.JPG.jpeg" alt="Dakka Airlangga, S.H." class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-navy/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center space-y-4">
+                            <span class="text-white text-sm font-semibold tracking-wider mb-2">Hubungi Langsung</span>
+                            <div class="flex space-x-4">
+                                <a href="https://instagram.com/airlggaa" target="_blank" class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-gradient-to-tr hover:from-yellow-400 hover:to-purple-600 transition-all hover:scale-110" title="Instagram @airlggaa"><i class="fa-brands fa-instagram text-xl"></i></a>
+                                <a href="https://wa.me/6281212418395" target="_blank" class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-[#25D366] transition-all hover:scale-110" title="WhatsApp"><i class="fa-brands fa-whatsapp text-xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center border-b-4 border-transparent group-hover:border-gold transition-colors">
+                        <h3 class="font-bold text-navy text-lg mb-1">Dakka Airlangga, S.H.</h3>
+                        <p class="text-gold text-sm font-bold uppercase tracking-wide">Litigation Partner</p>
+                    </div>
+                </div>
+
+                <!-- Advokat 6: Adhitya Putra Narasyah, S.H. -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl group border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-72 overflow-hidden relative">
+                        <img src="Adhit.jpeg" alt="Adhitya Putra Narasyah, S.H." class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-navy/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center space-y-4">
+                            <span class="text-white text-sm font-semibold tracking-wider mb-2">Hubungi Langsung</span>
+                            <div class="flex space-x-4">
+                                <a href="https://instagram.com/adhityapn" target="_blank" class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-gradient-to-tr hover:from-yellow-400 hover:to-purple-600 transition-all hover:scale-110" title="Instagram @adhityapn"><i class="fa-brands fa-instagram text-xl"></i></a>
+                                <a href="https://wa.me/6282130973820" target="_blank" class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-[#25D366] transition-all hover:scale-110" title="WhatsApp"><i class="fa-brands fa-whatsapp text-xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center border-b-4 border-transparent group-hover:border-gold transition-colors">
+                        <h3 class="font-bold text-navy text-lg mb-1">Adhitya P. Narasyah, S.H.</h3>
+                        <p class="text-gold text-sm font-bold uppercase tracking-wide">Legal Consultant</p>
+                    </div>
+                </div>
+
+                <!-- Advokat 7: Mohammad Reggan, S.H. -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl group border border-gray-100" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-72 overflow-hidden relative">
+                        <img src="Reggan.jpeg" alt="Mohammad Reggan, S.H." class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-navy/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center space-y-4">
+                            <span class="text-white text-sm font-semibold tracking-wider mb-2">Hubungi Langsung</span>
+                            <div class="flex space-x-4">
+                                <a href="https://instagram.com/reggn_" target="_blank" class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-gradient-to-tr hover:from-yellow-400 hover:to-purple-600 transition-all hover:scale-110" title="Instagram @reggn_"><i class="fa-brands fa-instagram text-xl"></i></a>
+                                <a href="https://wa.me/6281919024184" target="_blank" class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-[#25D366] transition-all hover:scale-110" title="WhatsApp"><i class="fa-brands fa-whatsapp text-xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center border-b-4 border-transparent group-hover:border-gold transition-colors">
+                        <h3 class="font-bold text-navy text-lg mb-1">Mohammad Reggan, S.H.</h3>
+                        <p class="text-gold text-sm font-bold uppercase tracking-wide">Associate</p>
+                    </div>
+                </div>
+
+                <!-- Advokat 8: Naura Nurazizah, S.H. -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl group border border-gray-100" data-aos="fade-up" data-aos-delay="400">
+                    <div class="h-72 overflow-hidden relative">
+                        <img src="Naura.jpeg" alt="Naura Nurazizah, S.H." class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-navy/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center space-y-4">
+                            <span class="text-white text-sm font-semibold tracking-wider mb-2">Hubungi Langsung</span>
+                            <div class="flex space-x-4">
+                                <a href="https://instagram.com/zzuact_hw" target="_blank" class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-gradient-to-tr hover:from-yellow-400 hover:to-purple-600 transition-all hover:scale-110" title="Instagram @zzuact_hw"><i class="fa-brands fa-instagram text-xl"></i></a>
+                                <a href="https://wa.me/62859106806141" target="_blank" class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-[#25D366] transition-all hover:scale-110" title="WhatsApp"><i class="fa-brands fa-whatsapp text-xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center border-b-4 border-transparent group-hover:border-gold transition-colors">
+                        <h3 class="font-bold text-navy text-lg mb-1">Naura Nurazizah, S.H.</h3>
+                        <p class="text-gold text-sm font-bold uppercase tracking-wide">Associate</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Form Konsultasi Interaktif Terhubung WhatsApp -->
+    <section id="consultation" class="py-24 relative bg-[url('./Background%20Website.jpg')] bg-cover bg-center bg-fixed">
+        <div class="absolute inset-0 bg-navy/90 backdrop-blur-sm"></div>
+        
+        <div class="max-w-5xl mx-auto px-6 relative z-10" data-aos="zoom-in">
+            <div class="bg-white rounded-[2rem] shadow-2xl overflow-hidden flex flex-col md:flex-row relative">
+                <!-- Aksen Garis Emas -->
+                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-gold via-goldlight to-gold"></div>
+
+                <!-- Info Panel -->
+                <div class="w-full md:w-2/5 bg-gray-50 p-10 md:p-12 flex flex-col justify-center border-r border-gray-200">
+                    <h3 class="font-playfair text-3xl font-bold text-navy mb-4">Mulai Langkah Anda</h3>
+                    <p class="text-sm text-gray-500 mb-8 leading-relaxed">Tim eksklusif kami siap merespon pertanyaan dan keluhan Anda secara rahasia dan profesional.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center text-navy font-medium">
+                            <div class="w-12 h-12 rounded-full bg-white shadow-md border border-gray-100 text-gold flex items-center justify-center mr-4 text-xl"><i class="fa-brands fa-whatsapp"></i></div>
+                            <div>
+                                <p class="text-xs text-gray-400 uppercase tracking-wider mb-0.5">Hotline 24/7</p>
+                                +62 851-1776-5013
+                            </div>
+                        </div>
+                        <div class="flex items-center text-navy font-medium">
+                            <div class="w-12 h-12 rounded-full bg-white shadow-md border border-gray-100 text-gold flex items-center justify-center mr-4 text-xl"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <p class="text-xs text-gray-400 uppercase tracking-wider mb-0.5">Email Kami</p>
+                                ihsanahmadfauzan.ihsan@gmail.com
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Panel (Interaktif JavaScript) -->
+                <div class="w-full md:w-3/5 p-10 md:p-12 bg-white">
+                    <form id="wa-form" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold text-navy uppercase tracking-wide mb-2">Nama Lengkap</label>
+                                <input type="text" id="form-name" required placeholder="Masukkan nama Anda..." class="w-full rounded-xl border border-gray-200 p-4 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all bg-gray-50 text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-navy uppercase tracking-wide mb-2">No. WhatsApp</label>
+                                <input type="tel" id="form-wa" required placeholder="Contoh: 0812..." class="w-full rounded-xl border border-gray-200 p-4 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all bg-gray-50 text-sm">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-navy uppercase tracking-wide mb-2">Kategori Perkara</label>
+                            <select id="form-category" required class="w-full rounded-xl border border-gray-200 p-4 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all text-sm text-gray-700">
+                                <option value="" disabled selected>Pilih spesialisasi hukum...</option>
+                                <option value="Sengketa Bisnis">Sengketa Bisnis dan Perdata</option>
+                                <option value="Legalitas dan Korporasi">Legalitas dan Korporasi</option>
+                                <option value="Penyusunan Kontrak">Penyusunan / Review Kontrak</option>
+                                <option value="Hukum Keluarga">Hukum Keluarga / Waris</option>
+                                <option value="Pidana Umum / Khusus">Pidana Umum / Khusus</option>
+                                <option value="Lainnya">Lainnya</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-navy uppercase tracking-wide mb-2">Jelaskan Singkat</label>
+                            <textarea id="form-message" required rows="4" placeholder="Ceritakan ringkasan permasalahan hukum Anda secara garis besar..." class="w-full rounded-xl border border-gray-200 p-4 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all bg-gray-50 text-sm resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-navy text-white font-bold py-4 rounded-xl hover:bg-gold hover:text-navy hover:shadow-[0_10px_20px_rgba(212,175,55,0.3)] transition-all duration-300 group flex justify-center items-center gap-3 text-lg">
+                            Kirim ke WhatsApp Kami <i class="fa-brands fa-whatsapp text-xl group-hover:scale-125 transition-transform"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Footer -->
+    <footer class="bg-navy text-white pt-20 pb-8 border-t-4 border-gold">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16 border-b border-white/10 pb-16">
+                
+                <!-- Branding -->
+                <div class="md:col-span-5">
+                    <a href="#" class="flex items-center gap-3 mb-6">
+                        <!-- Menggunakan gambar logo di footer juga -->
+                        <img src="./Logo Lawfirm.png" alt="Lexicon Logo" class="h-12 w-12 rounded-full object-cover border-2 border-gold/50">
+                        <div class="font-playfair text-3xl font-bold text-gold tracking-wide">
+                            Lexicon<span class="text-white text-xl font-normal ml-1">Law Firm</span>
+                        </div>
+                    </a>
+                    <p class="text-gray-400 text-sm leading-relaxed pr-6">Mitra strategis untuk solusi hukum yang pasti, inovatif, dan terpercaya bagi individu maupun perusahaan skala besar. Dedikasi utama kami adalah keamanan hukum dan kesuksesan Anda.</p>
+                </div>
+
+                <!-- Tautan -->
+                <div class="md:col-span-3">
+                    <h4 class="font-bold text-lg mb-6 text-white tracking-wide">Tautan Eksklusif</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li><a href="#home" class="hover:text-gold hover:translate-x-2 transition-all inline-block">Beranda Utama</a></li>
+                        <li><a href="#about" class="hover:text-gold hover:translate-x-2 transition-all inline-block">Profil Perusahaan</a></li>
+                        <li><a href="#practice-areas" class="hover:text-gold hover:translate-x-2 transition-all inline-block">Area Praktik</a></li>
+                        <li><a href="#lawyers" class="hover:text-gold hover:translate-x-2 transition-all inline-block">Jajaran Advokat</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kontak -->
+                <!-- Kontak -->
+<div class="md:col-span-4">
+    <h4 class="font-bold text-lg mb-6 text-white tracking-wide">Kantor Utama</h4>
+    <ul class="space-y-5 text-sm text-gray-400">
+        <!-- Alamat yang bisa diklik -->
+        <li>
+            <a href="https://maps.app.goo.gl/Hhk5BSyuF8zKuTEy5?g_st=ac" target="_blank" class="flex items-start group hover:text-gold transition-colors">
+                <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center mr-4 text-gold shrink-0 group-hover:bg-gold group-hover:text-navy transition-all">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <span class="leading-relaxed">Jl. AH. Nasution No.105,<br>Cipadung, Bandung, Jawa Barat</span>
+            </a>
+        </li>
+        
+        <!-- Media Sosial & Kontak -->
+<li class="flex flex-wrap items-center mt-6 gap-4">
+    <!-- Tambahkan w-full sm:w-auto agar di HP teks "Terhubung:" punya baris sendiri jika terlalu sempit -->
+    <span class="font-semibold text-white w-full sm:w-auto">Terhubung:</span>
+    
+    <div class="flex gap-4">
+        <!-- WhatsApp (Tambahkan shrink-0) -->
+        <a href="https://api.whatsapp.com/send/?phone=6285117765013&text&type=phone_number&app_absent=0" target="_blank" class="w-10 h-10 shrink-0 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-gold hover:text-navy hover:border-gold transition-all hover:-translate-y-1 shadow-lg tooltip" title="WhatsApp Kami">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        
+        <!-- Instagram (Tambahkan shrink-0) -->
+        <a href="https://www.instagram.com/sannsshelby_" target="_blank" class="w-10 h-10 shrink-0 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-gold hover:text-navy hover:border-gold transition-all hover:-translate-y-1 shadow-lg tooltip" title="Instagram Kami">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <!-- Email / Gmail (Tambahkan shrink-0) -->
+        <a href="mailto:ihsanahmadfauzan.ihsan@gmail.com" target="_blank" class="w-10 h-10 shrink-0 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-gold hover:text-navy hover:border-gold transition-all hover:-translate-y-1 shadow-lg tooltip" title="Kirim Email">
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+    </div>
+</li>
+
+           <!-- Copyright -->
+<!-- Copyright -->
+<div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left w-full text-xs text-gray-500 font-medium mt-8 pt-8 border-t border-white/10 gap-4">
+    <p>&copy; 2026 Lexicon Law Firm. All Rights Reserved.</p>
+    <p>Delivering our best for you.</p>
+</div>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- JavaScript Vanilla -->
+    <script>
+        // Inisialisasi AOS (Animate on Scroll)
+        AOS.init({
+            once: true,
+            offset: 50,
+            duration: 900, // Sedikit lebih lambat untuk efek elegan
+            easing: 'ease-out-cubic',
+        });
+
+        // Sticky Navbar Effect (Transisi lebih halus)
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.remove('bg-transparent', 'py-4', 'border-white/10');
+                navbar.classList.add('bg-navy/95', 'py-3', 'shadow-2xl', 'border-transparent', 'backdrop-blur-xl');
+            } else {
+                navbar.classList.add('bg-transparent', 'py-4', 'border-white/10');
+                navbar.classList.remove('bg-navy/95', 'py-3', 'shadow-2xl', 'border-transparent', 'backdrop-blur-xl');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Integrasi Form ke WhatsApp
+        const waForm = document.getElementById('wa-form');
+        waForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Mencegah reload halaman
+
+            // Ambil data dari form
+            const name = document.getElementById('form-name').value;
+            const phone = document.getElementById('form-wa').value;
+            const category = document.getElementById('form-category').value;
+            const message = document.getElementById('form-message').value;
+
+            // Format Pesan untuk WhatsApp
+            // Gunakan %0A untuk enter/baris baru di URL WhatsApp
+            const waText = `Halo Lexicon Law Firm,%0A%0APerkenalkan, saya *${name}* (No. WA: ${phone}).%0A%0ASaya ingin menjadwalkan konsultasi atau membutuhkan bantuan hukum terkait kategori: *${category}*.%0A%0A*Rincian Singkat:*%0A"${message}"%0A%0AMohon arahannya langkah selanjutnya. Terima kasih.`;
+            
+            // Nomor WhatsApp Tujuan Utama (+62 851-1776-5013)
+            const targetPhone = "6285117765013";
+            
+            // Buka tab baru menuju WhatsApp Web/App
+            const waURL = `https://wa.me/${targetPhone}?text=${waText}`;
+            window.open(waURL, '_blank');
+        });
+    </script>
+</body>
+</html>
